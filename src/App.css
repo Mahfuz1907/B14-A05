@@ -1,2 +1,21 @@
 @import "tailwindcss";
 @plugin "daisyui";
+
+.pjs {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.activeUI {
+  color: #db2777;
+  font-weight: 500;
+}
+
+.inactiveUI {
+  color: #475569;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.inactiveUI:hover {
+  color: black;
+}
