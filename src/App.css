@@ -5,6 +5,10 @@
   font-family: "Plus Jakarta Sans", sans-serif;
 }
 
+.inter {
+  font-family: "Inter", sans-serif;
+}
+
 .activeUI {
   color: #db2777;
   font-weight: 500;
