@@ -11,9 +11,11 @@ function Navbar() {
     }
 
     return (
-        <div className='flex flex-row justify-between items-center border border-[#f1f5f9] px-25 py-6'>
-            <img className='cursor-pointer' src={Logo} alt="" />
-            <ul className='pjs flex flex-row justify-between items-center gap-7 hover:text-black'>
+        <div className='flex flex-row justify-between items-center border border-[#f1f5f9] px-5 sm:px-25 py-2.5 sm:py-6'>
+            <img className='cursor-pointer hidden sm:flex' src={Logo} alt="" />
+            <img className='flex sm:hidden' src="/assets/hamburger.png" alt="" />
+            <img className='cursor-pointer flex sm:hidden' src={Logo} alt="" />
+            <ul className='pjs hidden sm:flex flex-row justify-between items-center gap-7 hover:text-black'>
                 <li onClick={() => handleActive(1)} className={`cursor-pointer ${active === 1 ? 'activeUI' : 'inactiveUI'}`}>Home</li>
                 <li onClick={() => handleActive(2)} className={`cursor-pointer ${active === 2 ? 'activeUI' : 'inactiveUI'}`}>Technologies</li>
                 <li onClick={() => handleActive(3)} className={`cursor-pointer ${active === 3 ? 'activeUI' : 'inactiveUI'}`}>Projects</li>
