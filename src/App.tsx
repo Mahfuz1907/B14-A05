@@ -5,6 +5,7 @@ import Footer from './Components/Footer/Footer'
 import Functionalities from './Components/Functionalities/Functionalities'
 import Navbar from './Components/Navbar/Navbar'
 import type { TechPromiseTypes } from './type'
+import { ToastContainer } from 'react-toastify'
 
 
 const TechnologiesPromise = async():Promise<TechPromiseTypes[]> => {
@@ -22,6 +23,11 @@ function App() {
           <Functionalities TechnologiesPromise={TechnologiesPromise()} />
         </Suspense>
         <Footer />
+        <div>
+          <ToastContainer
+            position="bottom-right"
+          />
+        </div>
     </div>
   )
 }

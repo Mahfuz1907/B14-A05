@@ -1,12 +1,30 @@
+import { useState, type Dispatch, type SetStateAction } from 'react';
 import '../../../App.css';
 import type { TechPromiseTypes } from '../../../type';
 import { FaStar } from "react-icons/fa";
+import { toast } from 'react-toastify';
 
 export interface TechCardProp{
-    tech:TechPromiseTypes
+    tech:TechPromiseTypes, 
+    stackArray: TechPromiseTypes[],
+    setStackArray: Dispatch<SetStateAction<TechPromiseTypes[]>>
 }
 
-function TechCard({tech}:TechCardProp) {
+function TechCard({tech, stackArray, setStackArray}:TechCardProp) {
+
+    const [disable, setDisable] = useState(false)
+
+    const handleAddButton = (item:TechPromiseTypes):void => {
+        const isAlreadyIn = stackArray.some((thing)=> item.id === thing.id)
+
+        if(!isAlreadyIn) {
+            const newArray = [...stackArray, item]
+            setStackArray(newArray)
+            setDisable(true)
+            toast.success(`${item.name} added to stack successfully`)
+        }
+    }
+
 
     return (
         <div className='inter rounded-2xl bg-[#ffffff01] shadow-md hover:shadow-xl shadow-[#0000000D] p-5 flex flex-col justify-between items-start gap-5'>
@@ -21,7 +39,7 @@ function TechCard({tech}:TechCardProp) {
                 <h4 className='text-[#6b7280]'>{tech.difficulty}</h4>
                 <button className='flex flex-row justify-between items-center gap-1 text-[#f59e0b]'><FaStar />{tech.rating}</button>
             </div>
-            <button className='cursor-pointer w-full btn btn-neutral'>Add to Stack</button>
+            <button disabled={disable} onClick={()=> handleAddButton(tech)} className='cursor-pointer w-full btn btn-neutral hover:bg-white hover:text-black rounded-lg'>Add to Stack</button>
         </div>
     );
 };
