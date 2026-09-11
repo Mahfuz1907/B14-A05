@@ -3,7 +3,7 @@ import Stack from '/assets/banner-stack.png'
 
 function Banner() {
     return (
-        <div className='px-5 sm:px-25 my-7.5 sm:my-25 flex flex-col sm:flex-row justify-between items-center w-full'>
+        <div className='px-5 sm:px-10 lg:px-25 my-7.5 sm:my-25 flex flex-col sm:flex-row justify-between items-center w-full'>
             <div className='flex flex-col justify-between items-center sm:items-start gap-6 sm:flex-1'>
                 <h1 className='flex flex-col justify-center items-center sm:items-start gap-1 inter text-6xl font-extrabold'>
                     <span className='text-[#0f172a]'>Build Your Ideal</span>

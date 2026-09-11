@@ -11,8 +11,8 @@ function Navbar() {
     }
 
     return (
-        <div className='flex flex-row justify-between items-center border border-[#f1f5f9] px-5 sm:px-25 py-2.5 sm:py-6'>
-            <img className='cursor-pointer hidden sm:flex' src={Logo} alt="" />
+        <div className='flex flex-row justify-between items-center border border-[#f1f5f9] px-5 sm:px-10 lg:px-25 py-2.5 sm:py-6'>
+            <img className='cursor-pointer hidden sm:flex w-25 lg:w-auto' src={Logo} alt="" />
             <img className='flex sm:hidden' src="/assets/hamburger.png" alt="" />
             <img className='cursor-pointer flex sm:hidden' src={Logo} alt="" />
             <ul className='pjs hidden sm:flex flex-row justify-between items-center gap-7 hover:text-black'>
