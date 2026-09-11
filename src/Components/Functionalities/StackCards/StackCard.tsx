@@ -2,8 +2,14 @@ import '../../../App.css';
 
 function StackCard() {
     return (
-        <div className='col-span-1'>
-            <h1>abc</h1>
+        <div className='sticky top-22 col-span-1 pjs bg-white border border-[#f1f5f9] rounded-2xl p-5 flex flex-col justify-between items-start gap-4'>
+            <div className='flex flex-col justify-between items-start gap-1'>
+                <h1 className='text-[#0f172a] text-base font-bold'>Your Stack</h1>
+                <p className='text-[#94a3b8] text-xs font-normal'>No technologies selected yet.</p>
+            </div>
+            <div className='border border-dashed border-[#e2e8f0] p-6 w-full flex justify-center items-center rounded-xl'>
+                <p className='text-[#94a3b8] text-xs font-normal'>Your stack is empty.</p>
+            </div>
         </div>
     );
 };

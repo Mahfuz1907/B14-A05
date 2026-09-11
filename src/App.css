@@ -23,3 +23,40 @@
 .inactiveUI:hover {
   color: black;
 }
+
+.badge-blue {
+  background-color: #e0f2fe;
+  border: 1px solid #e0f2fe;
+  color: #0369a1;
+}
+
+.badge-green {
+  background-color: #d1fae5;
+  border: 1px solid #d1fae5;
+  color: #047857;
+}
+
+.badge-black {
+  background-color: #9b9d9c;
+  border: 1px solid #9b9d9c;
+  color: black;
+}
+
+.badge-violet {
+  background-color: #f4d8f4;
+  border: 1px solid #f4d8f4;
+  color: #ca06ca;
+}
+
+.badge-orange {
+  background-color: #f3c9ae;
+  border: 1px solid #f3c9ae;
+  color: #cc5308;
+}
+
+.badge {
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-size: 10.4px;
+  font-weight: 700;
+}

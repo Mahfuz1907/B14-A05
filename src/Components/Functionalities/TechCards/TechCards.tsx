@@ -8,7 +8,7 @@ export interface TechPromiseCardTypes{
 
 function TechCards({techPromise}:TechPromiseCardTypes) {
     return (
-        <div className='col-span-3 grid grid-cols-3 justify-between items-center gap-10.5'>
+        <div className='col-span-3 grid grid-cols-3 justify-between items-start gap-10.5'>
             {
                 techPromise.map((tech) => <TechCard key={tech.id} tech={tech} />)
             }
