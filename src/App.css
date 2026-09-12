@@ -60,3 +60,48 @@
   font-size: 10.4px;
   font-weight: 700;
 }
+
+.disabledButton {
+  background-color: #9ca3af;
+  color: #e5e7eb;
+  cursor: not-allowed;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.enabledButton {
+  cursor: pointer;
+  background-color: black;
+  border: 1px solid black;
+  color: white;
+  width: 100%;
+  font-size: 12px;
+  font-weight: 400;
+  padding: 10px 20px;
+  border-radius: 8px;
+}
+
+.enabledButton:hover {
+  background-color: white;
+  color: black;
+}
+
+.removeAllButton {
+  background-color: white;
+  border: 1px solid #ed8c85;
+  border-radius: 8px;
+  padding: 6px 16px;
+  width: 100%;
+  color: #d82c20;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.removeAllButton:hover {
+  background-color: #d82c20;
+  color: white;
+}

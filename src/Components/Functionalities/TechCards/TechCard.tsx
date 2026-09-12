@@ -24,6 +24,8 @@ function TechCard({tech, stackArray, setStackArray}:TechCardProp) {
         }
     }
 
+    const alreadyInArray = stackArray.some((item) => item.id === tech.id)
+
 
     return (
         <div className='inter rounded-2xl bg-[#ffffff01] shadow-md hover:shadow-xl shadow-[#0000000D] p-5 flex flex-col justify-between items-start gap-5'>
@@ -39,10 +41,10 @@ function TechCard({tech, stackArray, setStackArray}:TechCardProp) {
                 <button className='flex flex-row justify-between items-center gap-1 text-[#f59e0b]'><FaStar />{tech.rating}</button>
             </div>
             <button 
-            aria-disabled={stackArray.some((item) => item.id === tech.id)} 
+            aria-disabled={alreadyInArray} 
             onClick={()=> handleAddButton(tech)} 
-            className={`${stackArray.some((item) => item.id === tech.id) ? 'bg-gray-400 text-gray-200 cursor-not-allowed' : 'cursor-pointer bg-black border border-black text-white hover:bg-white hover:text-black'}  w-full text-xs font-normal py-2.5 px-5 rounded-lg`}>
-                {stackArray.some((item) => item.id === tech.id) ? '✓ Added to Stack' : 'Add to Stack'}
+            className={`${alreadyInArray ? 'disabledButton' : 'enabledButton'}`}>
+                {alreadyInArray ? '✓ Added to Stack' : 'Add to Stack'}
             </button>
         </div>
     );

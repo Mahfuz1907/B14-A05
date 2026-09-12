@@ -43,7 +43,7 @@ function StackCard({stackArray, setStackArray}: StackCardsTypes) {
                             }
                         </div>
                     </div>
-                    <button onClick={()=> handleClearStackButton()} className='bg-white hover:bg-[#d82c20] border border-[#ed8c85] rounded-lg py-1.5 px-4 w-full text-[#d82c20] hover:text-white text-sm font-semibold cursor-pointer'>Remove All</button>
+                    <button onClick={()=> handleClearStackButton()} className='removeAllButton'>Remove All</button>
                 </div> 
             }
         </div>
