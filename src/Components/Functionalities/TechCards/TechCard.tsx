@@ -1,4 +1,4 @@
-import { useState, type Dispatch, type SetStateAction } from 'react';
+import { type Dispatch, type SetStateAction } from 'react';
 import '../../../App.css';
 import type { TechPromiseTypes } from '../../../type';
 import { FaStar } from "react-icons/fa";
@@ -12,15 +12,12 @@ export interface TechCardProp{
 
 function TechCard({tech, stackArray, setStackArray}:TechCardProp) {
 
-    const [disable, setDisable] = useState(false)
-
     const handleAddButton = (item:TechPromiseTypes):void => {
         const isAlreadyIn = stackArray.some((thing)=> item.id === thing.id)
 
         if(!isAlreadyIn) {
             const newArray = [...stackArray, item]
             setStackArray(newArray)
-            setDisable(true)
             toast.success(`${item.name} added to stack successfully`)
         }
     }
@@ -39,7 +36,7 @@ function TechCard({tech, stackArray, setStackArray}:TechCardProp) {
                 <h4 className='text-[#6b7280]'>{tech.difficulty}</h4>
                 <button className='flex flex-row justify-between items-center gap-1 text-[#f59e0b]'><FaStar />{tech.rating}</button>
             </div>
-            <button disabled={disable} onClick={()=> handleAddButton(tech)} className='cursor-pointer w-full btn btn-neutral hover:bg-white hover:text-black rounded-lg'>{disable ? '✓ Added to Stack' : 'Add to Stack'}</button>
+            <button disabled={stackArray.some((item) => item.id === tech.id)} onClick={()=> handleAddButton(tech)} className='cursor-pointer w-full btn btn-neutral hover:bg-white hover:text-black rounded-lg'>{stackArray.some((item) => item.id === tech.id) ? '✓ Added to Stack' : 'Add to Stack'}</button>
         </div>
     );
 };

@@ -1,13 +1,22 @@
+import type { Dispatch, SetStateAction } from 'react';
 import '../../../App.css';
 import type { TechPromiseTypes } from '../../../type';
 import Stack from './Stack';
 
 export interface StackCardsTypes{
-    stackArray: TechPromiseTypes[]
+    stackArray: TechPromiseTypes[], 
+    setStackArray:Dispatch<SetStateAction<TechPromiseTypes[]>>
 }
 
-function StackCard({stackArray}: StackCardsTypes) {
+function StackCard({stackArray, setStackArray}: StackCardsTypes) {
+
+    const handleClearStackButton = () => {
+        const newArray:TechPromiseTypes[] = []
+        setStackArray(newArray)
+    }
+
     console.log(stackArray)
+    
     return (
         <div className='sticky top-22.5 col-span-1'>
             {
@@ -30,11 +39,11 @@ function StackCard({stackArray}: StackCardsTypes) {
                         </div>
                         <div className='flex flex-col justify-between items-start gap-1 w-full'>
                             {
-                                stackArray.map((stack) => <Stack key={stack.id} stack={stack} />)
+                                stackArray.map((stack) => <Stack key={stack.id} stack={stack} stackArray={stackArray} setStackArray={setStackArray} />)
                             }
                         </div>
                     </div>
-                    <button className='bg-white hover:bg-[#d82c20] border border-[#ed8c85] rounded-lg py-1.5 px-4 w-full text-[#d82c20] hover:text-white text-sm font-semibold cursor-pointer'>Remove All</button>
+                    <button onClick={()=> handleClearStackButton()} className='bg-white hover:bg-[#d82c20] border border-[#ed8c85] rounded-lg py-1.5 px-4 w-full text-[#d82c20] hover:text-white text-sm font-semibold cursor-pointer'>Remove All</button>
                 </div> 
             }
         </div>
