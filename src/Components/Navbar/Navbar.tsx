@@ -10,12 +10,25 @@ function Navbar() {
         setActive(seriol)
     }
 
+    const [hamburgerFunction, setHamburgerFunction] = useState(true)
+
+    const handleHamburger = () => {
+        setHamburgerFunction(!hamburgerFunction)
+    }
+
     return (
-        <nav className='sticky top-0 z-50 bg-white flex flex-row justify-between items-center border border-[#f1f5f9] px-5 sm:px-10 lg:px-25 py-2.5 sm:py-6'>
-            <img className='cursor-pointer hidden sm:flex w-25 lg:w-auto' src={Logo} alt="" />
-            <img className='flex sm:hidden' src="/assets/hamburger.png" alt="" />
-            <img className='cursor-pointer flex sm:hidden' src={Logo} alt="" />
-            <ul className='pjs hidden sm:flex flex-row justify-between items-center gap-7 hover:text-black'>
+        <nav className='sticky top-0 z-50 bg-white flex flex-row justify-between items-center border border-[#f1f5f9] px-5 sm:px-25 py-3 sm:py-6'>
+            <img className='cursor-pointer hidden md:flex' src={Logo} alt="" />
+            <img onClick={handleHamburger} className='flex md:hidden' src="/assets/hamburger.png" alt="" />
+            <ul className={`${hamburgerFunction ? 'hidden' : 'flex'} absolute top-20 pjs flex-col justify-between items-start gap-3 hover:text-black`}>
+                <li onClick={() => handleActive(1)} className={`cursor-pointer ${active === 1 ? 'activeUI' : 'inactiveUI'}`}>Home</li>
+                <li onClick={() => handleActive(2)} className={`cursor-pointer ${active === 2 ? 'activeUI' : 'inactiveUI'}`}>Technologies</li>
+                <li onClick={() => handleActive(3)} className={`cursor-pointer ${active === 3 ? 'activeUI' : 'inactiveUI'}`}>Projects</li>
+                <li onClick={() => handleActive(4)} className={`cursor-pointer ${active === 4 ? 'activeUI' : 'inactiveUI'}`}>About</li>
+                <li onClick={() => handleActive(5)} className={`cursor-pointer ${active === 5 ? 'activeUI' : 'inactiveUI'}`}>Contact</li>
+            </ul>
+            <img className='cursor-pointer flex md:hidden' src={Logo} alt="" />
+            <ul className='pjs hidden md:flex flex-row justify-between items-center gap-7 hover:text-black'>
                 <li onClick={() => handleActive(1)} className={`cursor-pointer ${active === 1 ? 'activeUI' : 'inactiveUI'}`}>Home</li>
                 <li onClick={() => handleActive(2)} className={`cursor-pointer ${active === 2 ? 'activeUI' : 'inactiveUI'}`}>Technologies</li>
                 <li onClick={() => handleActive(3)} className={`cursor-pointer ${active === 3 ? 'activeUI' : 'inactiveUI'}`}>Projects</li>

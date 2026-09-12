@@ -18,11 +18,13 @@ function App() {
   return (
     <div>
         <Navbar />
-        <Banner />
-        <Suspense fallback={<div>Loading....</div>} >
-          <Functionalities TechnologiesPromise={TechnologiesPromise()} />
-        </Suspense>
-        <Footer />
+        <div className='hidden'>
+          <Banner />
+          <Suspense fallback={<div>Loading....</div>} >
+            <Functionalities TechnologiesPromise={TechnologiesPromise()} />
+          </Suspense>
+          <Footer />
+        </div>
         <div>
           <ToastContainer
             position="bottom-right"
