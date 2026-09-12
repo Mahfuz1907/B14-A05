@@ -17,9 +17,9 @@ const TechnologiesPromise = async():Promise<TechPromiseTypes[]> => {
 function App() {
   return (
     <div>
-        <Navbar />
+      <Banner />
         <div className='hidden'>
-          <Banner />
+          <Navbar />
           <Suspense fallback={<div>Loading....</div>} >
             <Functionalities TechnologiesPromise={TechnologiesPromise()} />
           </Suspense>
