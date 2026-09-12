@@ -39,7 +39,7 @@ function TechCard({tech, stackArray, setStackArray}:TechCardProp) {
                 <h4 className='text-[#6b7280]'>{tech.difficulty}</h4>
                 <button className='flex flex-row justify-between items-center gap-1 text-[#f59e0b]'><FaStar />{tech.rating}</button>
             </div>
-            <button disabled={disable} onClick={()=> handleAddButton(tech)} className='cursor-pointer w-full btn btn-neutral hover:bg-white hover:text-black rounded-lg'>Add to Stack</button>
+            <button disabled={disable} onClick={()=> handleAddButton(tech)} className='cursor-pointer w-full btn btn-neutral hover:bg-white hover:text-black rounded-lg'>{disable ? '✓ Added to Stack' : 'Add to Stack'}</button>
         </div>
     );
 };

@@ -24,7 +24,7 @@ function Functionalities({TechnologiesPromise}:TechnologiesPromiseTypes) {
             </div>
             <div className='grid grid-cols-4 justify-between items-start gap-8 w-full'>
                 <TechCards techPromise={techPromise} stackArray={stackArray} setStackArray={setStackArray} />
-                <StackCard />
+                <StackCard stackArray={stackArray} />
             </div>
         </div>
     );
