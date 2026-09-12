@@ -2,6 +2,7 @@ import type { Dispatch, SetStateAction } from 'react';
 import '../../../App.css';
 import type { TechPromiseTypes } from '../../../type';
 import Stack from './Stack';
+import { toast } from 'react-toastify';
 
 export interface StackCardsTypes{
     stackArray: TechPromiseTypes[], 
@@ -13,9 +14,8 @@ function StackCard({stackArray, setStackArray}: StackCardsTypes) {
     const handleClearStackButton = () => {
         const newArray:TechPromiseTypes[] = []
         setStackArray(newArray)
+        toast.info('Stack Cleared')
     }
-
-    console.log(stackArray)
     
     return (
         <div className='sticky top-22.5 col-span-1'>

@@ -19,6 +19,8 @@ function TechCard({tech, stackArray, setStackArray}:TechCardProp) {
             const newArray = [...stackArray, item]
             setStackArray(newArray)
             toast.success(`${item.name} added to stack successfully`)
+        }else if(isAlreadyIn){
+            toast.warning(`${item.name} already added`)
         }
     }
 
@@ -36,7 +38,12 @@ function TechCard({tech, stackArray, setStackArray}:TechCardProp) {
                 <h4 className='text-[#6b7280]'>{tech.difficulty}</h4>
                 <button className='flex flex-row justify-between items-center gap-1 text-[#f59e0b]'><FaStar />{tech.rating}</button>
             </div>
-            <button disabled={stackArray.some((item) => item.id === tech.id)} onClick={()=> handleAddButton(tech)} className='cursor-pointer w-full btn btn-neutral hover:bg-white hover:text-black rounded-lg'>{stackArray.some((item) => item.id === tech.id) ? '✓ Added to Stack' : 'Add to Stack'}</button>
+            <button 
+            aria-disabled={stackArray.some((item) => item.id === tech.id)} 
+            onClick={()=> handleAddButton(tech)} 
+            className={`${stackArray.some((item) => item.id === tech.id) ? 'bg-gray-400 text-gray-200 cursor-not-allowed' : 'cursor-pointer bg-black border border-black text-white hover:bg-white hover:text-black'}  w-full text-xs font-normal py-2.5 px-5 rounded-lg`}>
+                {stackArray.some((item) => item.id === tech.id) ? '✓ Added to Stack' : 'Add to Stack'}
+            </button>
         </div>
     );
 };

@@ -2,6 +2,7 @@ import type { Dispatch, SetStateAction } from 'react';
 import '../../../App.css';
 import type { TechPromiseTypes } from '../../../type';
 import { RxCross1 } from "react-icons/rx";
+import { toast } from 'react-toastify';
 
 export interface StackType{
     stack: TechPromiseTypes, 
@@ -14,6 +15,7 @@ function Stack({stack, stackArray, setStackArray} :StackType) {
     const removeStackButton = (item:TechPromiseTypes):void => {
         const updateArray = stackArray.filter((thing)=> thing.id !== item.id)
         setStackArray(updateArray)
+        toast.info(`${item.name} removed from stack`)
     }
     return (
         <div className='border border-[#e2e8f0] rounded-lg flex flex-row justify-between items-center w-full p-2.5'>
