@@ -17,19 +17,17 @@ const TechnologiesPromise = async():Promise<TechPromiseTypes[]> => {
 function App() {
   return (
     <div>
-      <Banner />
-        <div className='hidden'>
-          <Navbar />
-          <Suspense fallback={<div>Loading....</div>} >
-            <Functionalities TechnologiesPromise={TechnologiesPromise()} />
-          </Suspense>
-          <Footer />
-        </div>
-        <div>
-          <ToastContainer
-            position="bottom-right"
-          />
-        </div>
+        <Navbar />
+        <Banner />
+        <Suspense fallback={<div>Loading....</div>} >
+          <Functionalities TechnologiesPromise={TechnologiesPromise()} />
+        </Suspense>
+        <Footer />
+      <div>
+        <ToastContainer
+          position="bottom-right"
+        />
+      </div>
     </div>
   )
 }

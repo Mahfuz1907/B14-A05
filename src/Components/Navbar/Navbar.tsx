@@ -17,7 +17,7 @@ function Navbar() {
     }
 
     return (
-        <nav className='sticky top-0 z-50 bg-white flex flex-row justify-between items-center border border-[#f1f5f9] px-5 sm:px-25 py-3 sm:py-6'>
+        <nav className='sticky top-0 z-50 bg-white flex flex-row justify-between items-center border border-[#f1f5f9] px-5 sm:px-10 md:px-25 py-3 sm:py-6'>
             <img className='cursor-pointer hidden md:flex' src={Logo} alt="" />
             <img onClick={handleHamburger} className='flex md:hidden' src="/assets/hamburger.png" alt="" />
             <ul className={`${hamburgerFunction ? 'hidden' : 'flex'} absolute top-20 pjs flex-col justify-between items-start gap-3 hover:text-black`}>

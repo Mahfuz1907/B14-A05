@@ -11,7 +11,7 @@ export interface TechPromiseCardTypes{
 
 function TechCards({techPromise, stackArray, setStackArray}:TechPromiseCardTypes) {
     return (
-        <div className='col-span-3 grid grid-cols-3 justify-between items-start gap-10.5'>
+        <div className='md:col-span-2 lg:col-span-3 grid sm:grid-cols-2 lg:grid-cols-3 justify-between items-start gap-10.5'>
             {
                 techPromise.map((tech) => <TechCard key={tech.id} tech={tech} stackArray={stackArray} setStackArray={setStackArray} />)
             }

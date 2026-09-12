@@ -3,7 +3,7 @@ import { GoDotFill } from "react-icons/go";
 
 function Footer() {
     return (
-        <div className='border border-[#f1f5f9] bg-white px-5 sm:px-10 lg:px-25 pt-16 pb-12 flex flex-col justify-between items-center sm:items-start gap-14'>
+        <div className='border border-[#f1f5f9] bg-white px-5 sm:px-10 md:px-25 pt-16 pb-12 flex flex-col justify-between items-center sm:items-start gap-14'>
             <div className='flex flex-row justify-start items-center sm:items-start gap-10 lg:gap-40'>
                 <div className='flex flex-col justify-between items-center sm:items-start gap-3'>
                     <img src="/assets/logo-text.png" alt="" />

@@ -3,7 +3,7 @@ import Stack from '/assets/banner-stack.png'
 
 function Banner() {
     return (
-        <div className='px-5 md:px-25 my-10 md:my-0 flex flex-col md:flex-row justify-between items-center w-full'>
+        <div className='px-5 sm:px-10 md:px-25 my-10 md:my-0 flex flex-col md:flex-row justify-between items-center w-full'>
             <div className='flex flex-col justify-between items-center md:items-start gap-6 flex-1'>
                 <h1 className='flex flex-col justify-center text-center md:text-start items-center md:items-start gap-1 inter text-6xl font-extrabold'>
                     <span className='text-[#0f172a]'>Build Your Ideal</span>
@@ -17,7 +17,7 @@ function Banner() {
                     <button className='cursor-pointer px-4 py-3 rounded-lg border border-[#e5e7eb] hover:bg-[#e5e7eb] bg-white text-[#374151 text-sm font-normal]'>Learn More</button>
                 </div>
             </div>
-            <img className='flex-1' src={Stack} alt="" />
+            <img className='flex-1 w-auto md:w-90 lg:w-auto' src={Stack} alt="" />
         </div>
     );
 };
